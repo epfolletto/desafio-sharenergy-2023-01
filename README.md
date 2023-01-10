@@ -1,92 +1,119 @@
-# Desafio para o processo seletivo SHARENERGY 2023/01
+# `Projeto`
+Teste técnico SHARENERGY
 
-Repositório destinado aos interessados em participar do processo seletivo da SHARENERGY 2023/01. As vagas são voltadas para desenvolvimento de aplicações Web e Mobile.
+# `Vídeo explicativo`
+[https://youtu.be/QZOpOgpzwOk](https://youtu.be/QZOpOgpzwOk). </br>
 
-## Sobre a SHARENERGY
 
-No ramo da produção de energia fotovoltaica, há a modalidade de produção compartilhada. Nessa modalidade, diferentes pessoas investem na construção de uma mesma usina fotovoltaica e dividem o retorno finaceiro referente à energia gerada pela usina.
+# `Instalando e rodando localmente`
+1. Fazer o clone do projeto.</br>
+2. Dento da pasta *backend* rodar npm install.</br>
+3. Dento da pasta *backend* rodar npm run dev o servidor ficará escutando na porta 3003.</br>
+4. Dento da pasta *frontend* rodar npm install.</br>
+5. Dento da pasta *frontend* rodar npm run start e a página abrirá na porta 3000.
 
-Acreditamos que as energias renováveis terão um lugar dominante em nossa economia pelo resto de nossas vidas. Trabalhamos no sentido de ampliar o impacto positivo que as energias renováveis podem ter no meio ambiente e nas nossas vidas. O sucesso da SHARENERGY é resultado de nossa equipe apaixonada, juntamente com nosso compromisso de oferecer a melhor solução.
+# `Descrição`
+Este projeto foi desenvolvido como parte do processo de seleção da empresa Sharenergy. Foram desenvolvidos tanto o *fronted* quanto *backend*. A API possui 13 (treze) endpoints e sua documentação pode ser acessada no link abaixo: </br>
 
-Sabemos que negócios enfrentam desafios únicos e por isso oferecemos soluções turnkey, customizadas, economicamente viáveis e seguras.
+[https://documenter.getpostman.com/view/21552787/2s8Z76uTyh](https://documenter.getpostman.com/view/21552787/2s8Z76uTyh). </br>
 
-A Startup figura entre as top 10 EnergyTechs do ranking 100 Open Startups desde 2018. Prova de que a inovação está enraizada em nossa cultura. Somos uma startup em estágio de crescimento e você trabalhará diretamente com os fundadores, ajudando a definir a visão, o produto e a experiência do usuário.
+Para navegar pela aplicação é necessário realizar um cadastro. Existem dois tipos de usuários: NORMAL e ADMIN, que possuem acessos a diferentes opções, como mostra o esquema abaixo:
 
-<p align="left">
-  <a href="https://www.linkedin.com/company/sharenergy-brasil/">
-    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn Button">
-  </a>
-  <a href="https://sharenergy.com.br/">
-    <img src="https://img.shields.io/badge/-Website-red" alt="Sharenergy Website Button">
-  </a>
-</p>
 
-## Sobre a vaga
+|        | Pessoas            | Gatos              | Cachorros          | Meu Perfil         | Usuários | Clientes|
+|--------|--------------------|--------------------|--------------------|--------------------|----------|---------|
+| NORMAL | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:      | :x:
+| ADMIN  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:  
 
-Já pensou em potencializar o setor que mais cresce na galáxia e trabalhar com uma solução que utiliza tecnologia web de ponta, altamente distribuída com foco em performance e disponibilidade? 👀
+# `Páginas da aplicação`
+A aplicação é composta, no total, por nove páginas diferentes: apresentação, sobre, login, pessoas, gatos, cachorros, meu perfil, usuários e clientes:
 
-Os desenvolvedores da Sharenergy são responsáveis por criar e manter aplicações para clientes internos e externos, prover soluções escaláveis, resilientes e altamente disponíveis que sustentem picos de acesso além de atuar como referência técnica e tutores de outros desenvolvedores.
+**Página Apresentação:** página inicial para a qual o usuário é direcionado inicialmente, composta por um texto de boas vindas.
 
-Procuramos por pessoas dinâmicas e que queiram estar aprendendo sempre. Nossa equipe é jovem, motivada e estamos sempre em busca de soluções criativas para alcançar os resultados que nossos clientes esperam. Se você tem esse perfil, é autoconfiante, autodidata e tem facilidade para lidar com desafios diários, essa vaga é para você!
+**Página Sobre:** composta por um pequeno resumo sobre o projeto.
 
-# O Desafio
+**Página Login:** página onde o usuário insere seus dados para fazer login. É possível salvar seus dados para manter-se logado selecionando "Lembrar-me".
 
-Construir uma aplicação web (frontend e backend) capaz de realizar a comunicação com APIs distintas, além de um CRUD.
+**Página Pessoas:** nesta página existem alguns componentes:
+- cabeçalho: onde o usuário pode navegar entre as páginas da aplicação e também uma opção de logout. </br>
+- filtro: na parte esquerda central existem algumas opções de filtro e ordenação das pessoas que aparecem na parte principal da página. </br>
+- lista de pessoas: na parte central são exibidos cards das pessoas, onde estão contidas (além da foto) as informações de: username, nome, idade e e-mail. </br>
+- rodapé: exibido na parte inferior, contém algumas informações da Sharenergy e também ícones que direcionam para as redes sociais da empresa.
 
-## Aplicação
+**Página Gatos:** nesta página, o usuário pode escolher um status http e então lhe é retornado uma imagem correspondente ao status selecionado.
 
-- A página inicial da aplicação deve ser uma `Login Page`;
-- O usuário deve ser capaz de se autenticar utilizando o username `desafiosharenergy` e password `sh@r3n3rgy`, também, deve existir a possibilidade do usuário utilizar o `remember me` para realizar logins automáticos, sem a necessidade de digitar username e password após o primeiro acesso;
-- Após o Login, a página principal deve conter uma listagem de usuários gerada a partir da api [Random User Generator](https://randomuser.me/), a lista deve conter a foto do usuário, nome completo, email, username e idade. Além disso, os requests devem ser páginados, porém, é de critério do participante do desafio a quantidade de resultados a serem exibidos por página e variações para o mesmo. Também, deve haver uma search para buscar usuários por nome, email ou username;
-- Em uma segunda página, o usuário deve ser capaz de selecionar um status code http qualquer, e, após a seleção, deve ser retornada uma imagem da api [HTTP Cat](https://http.cat/) relacionada ao status escolhido, caso não exista tal imagem, deve ser retornada uma imagem de not found à critério de escolha do participante do desafio;
-- Em uma terceira página, deve haver um botão de refresh que, ao ser clicado, deve retornar uma imagem aleatória da api [Random Dog](https://random.dog/);
-- Em uma quarta página, deve haver uma lista de clientes, através da qual o usuário deve ser capaz de cadastrar novos clientes, visualizar informações de um cliente específico, atualizar um cliente e deletar clientes. O cadastro deve possuir nome, email, telefone, endereço e cpf.
+**Página Cachorros:** nesta página, o usuário pode iteragir com o botão "Atualizar", então é mostrada uma nova imagem (ou vídeo) de um cachorro.
 
-### Requisitos da aplicação e de código
+**Página Meu Perfil:** nesta página o usuário pode completar o seu cadastro e editar seus dados.
 
-- Interface amigável, bonita e limpa
-- Responsividade
-- Clean Code
+**Página Usuários:** disponível apenas para usuários do tipo ADMIN. Nesta página é possível ver todos os usuários que estão cadastrados no sistema, detalhar as informações, editar o tipo e deletar.
 
-### Ferramentas e Stack a ser utilizado
+**Página Clientes:** disponível apenas para usuários do tipo ADMIN. Nesta página é possível manipular informações de clientes: criar, detalhar, editar e deletar.
 
-- ReactJS para o frontend
-- NodeJS (com ou sem frameworks) ou Golang para o backend
-- MongoDB
-- TypeScript
-- HTML e CSS
+# `Testes`
+Foram feitos testes unitários utilizando Jest:
+<img width="2000px" src="./frontend/src/assets/images/test.png"/>
 
-### Aprimoramentos adicionais da aplicação (opcional)
+# `Tecnologias utilizadas`
+<div>
+<img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white">
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white">
+<img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge">
+<img src="https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white">
+<img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white">
+</div>
 
-A aplicação criada para o desafio pode ser aprimorada com recursos pensados por você. A seguir, foram listadas algumas sugestões do que poderia ser feito:
+# `Autor`
+Evandro Paulo Folletto </br>
+<a href="https://www.linkedin.com/in/evandrofolletto/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
+<a href="https://github.com/epfolletto"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> 
 
-- Testes
-- Documentação
+# `Paleta de cores utilizada`
+<img width="450px" src="./frontend/src/assets/images/color-theme.png"/>
 
-### Mas, afinal, quais ferramentas a Sharenergy utiliza?
+# `Imagens`
 
-* [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) e [Typescript](https://www.typescriptlang.org/)
-* Front-end: [ReactJS](https://reactjs.org/) e [React Native](https://reactnative.dev/)
-* Back-end: [Node.js](https://nodejs.org/en/), [NestJS](https://nestjs.com/) e [Go](https://golang.org/)
-* Banco de dados: [MongoDB](https://www.mongodb.com/) do lado do servidor e [Minimongo](https://guide.meteor.com/collections.html) do lado do cliente (cache)
-* Gerenciamento de Containers: [Docker](https://www.docker.com/)
-* Gerenciamento de Repositórios: [NX](https://nx.dev/)
-* UI: [Tailwind CSS](https://tailwindcss.com/) e [Material-UI V4](https://v4.mui.com/)
-* Sistema Operacional (principal): [Linux](https://www.linux.org/), também sendo possível utilizar o [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) (WSL)
+### Página Start
+<img src="./frontend/src/assets/images/readme/1.start.png"/>
 
-## O que devo entregar?
+### Página About
+<img src="./frontend/src/assets/images/readme/2.about.png"/>
 
-Esperamos de você duas entregas: o código no GitHub e um vídeo explicativo no YouTube.
+### Página Pessoas
+<img src="./frontend/src/assets/images/readme/3.peoples.png"/>
 
-### Instruções
+### Página Gatos
+<img src="./frontend/src/assets/images/readme/4.gatos.png"/>
 
-- Faça um fork desse repositório.
-- Em seguida, crie uma branch, cujo nome é o seu nome completo, no seguinte formato: meu-nome-completo.
-- Resolva o desafio realizando versionamento local e remoto. Fique à vontade em criar outras branches durante o desenvolvimento do código.
-- Inclua no README.md uma breve instrução de instalação e de execução da aplicação criada.
-- Faça um vídeo que explique o que você fez no desafio, com duração aproximada de 5 minutos. A facecam é opcional, mas bem-vinda. O vídeo deve ser postado no YouTube (pode deixar como não listado) e seu link deve ser colocado no README.md.
-- Ao finalizar o desafio, faça um pull request de sua branch para esse repositório.
+### Página Cachorros
+<img src="./frontend/src/assets/images/readme/5.cachorros.png"/>
 
-### Prazo limite de entrega
+### Página Meu Perfil
+<img src="./frontend/src/assets/images/readme/6.meuperfil.png"/>
 
-O pull request com sua solução do desafio deve ser feito até a data especificada no corpo do email que você recebeu com a descrição do desafio.
+### Página Usuários
+<img src="./frontend/src/assets/images/readme/7.usuarios_1.png"/>
+
+### Página Cliente
+<img src="./frontend/src/assets/images/readme/8.usuario_2.png"/>
+
+### Página Cliente
+<img src="./frontend/src/assets/images/readme/9.clientes_1.png"/>
+
+### Página Cliente
+<img src="./frontend/src/assets/images/readme/10.clientes_2.png"/>
+
+### Página Cliente
+<img src="./frontend/src/assets/images/readme/11.clientes_3.png"/>
+
+### Página Detail
+<img src="./frontend/src/assets/images/readme/12.clientes_4.png"/>
